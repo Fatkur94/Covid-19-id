@@ -6,7 +6,7 @@
 
   <!-- Hero content: will be in the middle -->
     <div class="hero-body">
-        <div class="container has-text-centered">
+        <div class="container">
             <covid-pusat></covid-pusat>
             
             <covid-search></covid-search>
