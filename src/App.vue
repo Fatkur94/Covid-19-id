@@ -3,10 +3,16 @@
     <section class="section">
         <covid-main></covid-main>
       <div class="container">
-        <!-- <covid-search></covid-search> -->
         <covid-footer></covid-footer>
       </div>
     </section>
+    <div class="has-text-centered">
+        <span>
+          <strong>Covid-19</strong> by <a href="">Fatkur Rohman</a>. Source code : 
+          <a href="https://github.com/Fatkur94/Covid-19-id">github</a>. Data source : 
+          <a href="https://github.com/mathdroid/indonesia-covid-19-api">mathdroid</a>
+        </span>
+    </div>
   </div>
 </template>
 

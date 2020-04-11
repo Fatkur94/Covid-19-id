@@ -5,8 +5,8 @@
             <div class="column">
                 <div class="box">
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 positif" v-text="global.confirmed['value']"></h1>
-                        <p>Positif</p>
+                        <h1 class="title is-1 positif" v-text="global.confirmed.value"></h1>
+                        <p v-if="global.confirmed.value">Positif</p>
                     </div>
                 </div>
             </div>
@@ -21,16 +21,16 @@
             <div class="column">
                 <div class="box">
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 sembuh" v-text="global.recovered['value']"></h1>
-                        <p>Sembuh</p>
+                        <h1 class="title is-1 sembuh" v-text="global.recovered.value"></h1>
+                        <p v-if="global.recovered.value">Sembuh</p>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="box">
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 meninggal" v-text="global.deaths['value']"></h1>
-                        <p>Meninggal</p>
+                        <h1 class="title is-1 meninggal" v-text="global.deaths.value"></h1>
+                        <p v-if="global.deaths.value">Meninggal</p>
                     </div>
                 </div>
             </div>
@@ -55,5 +55,6 @@
 <style scoped>
 .box {
     background-color: white !important;
+    margin: 10%;
 }
 </style>

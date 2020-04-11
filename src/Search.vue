@@ -1,47 +1,42 @@
 <template>
-    <div class="search">
-        <article class="panel is-primary">
+    <div>
+        <div class="border">
+            <article class="panel is-primary">
+                <div class="tabs is-centered is-toggle">
+                    <ul>
+                        <li class="is-active"><a>Provinsi</a></li>
+                    </ul>
+                </div>
+                <div class="panel-block">
+                    <p class="control has-icons-left">
+                    <input class="input is-primary is-medium" type="text" placeholder="Ex=Riau" v-model="query">
+                    <span class="icon is-left">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                    </p>
+                </div>
 
-            <div class="tabs is-centered is-toggle">
-                <ul>
-                    <li class="is-active"><a>All</a></li>
-                    <li><a>Provinsi</a></li>
-                </ul>
-            </div>
-            <div class="panel-block">
-                <p class="control has-icons-left">
-                <input class="input is-primary is-medium" type="text" placeholder="Cari Wilayah" v-model="query">
-                <span class="icon is-left">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </span>
-                </p>
-            </div>
-
-            <div class="panel-block">
-                <div class="columns is-multiline">
-                    <div class="column is-one-third" v-for="prov in search" v-if="query">
-                        <div class="card">
-                            <div class="card-header">
-                                <p class="card-header-title" > {{ prov.provinsi | uppercase }}</p>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                    <p class="subtitle">Positif : <span class="positif">{{prov.kasusPosi}}</span></p>
-                                    <p class="subtitle">Sembuh : <span class="sembuh">{{prov.kasusSemb}}</span></p>
-                                    <p class="subtitle">Meninggal : <span class="meninggal">{{prov.kasusMeni}}</span></p>
+                <div class="search-result">
+                    <div class="columns is-multiline">
+                        <div class="column is-one-quarter" v-for="prov in search">
+                            <div class="card has-text-centered">
+                                <div class="card-header">
+                                    <p class="card-header-title is-centered"> {{ prov.provinsi | uppercase }}</p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p class="subtitle">Positif : <span class="positif">{{prov.kasusPosi}}</span></p>
+                                        <p class="subtitle">Sembuh : <span class="sembuh">{{prov.kasusSemb}}</span></p>
+                                        <p class="subtitle">Meninggal : <span class="meninggal">{{prov.kasusMeni}}</span></p>
+                                    </div>
                                 </div>
                             </div>
-                            <footer class="card-footer">
-                                <a href="" class="card-footer-item">Lihat selengkapnya...</a>
-                            </footer>
                         </div>
+                            <span class="title tag is-danger is-light" v-if="error">{{error}}</span>
                     </div>
-                        <span class="title tag is-danger is-light" v-if="error">{{error}}</span>
                 </div>
-            </div>
-
-        </article>
-
+            </article>
+        </div>
     </div>
 </template>
 
@@ -81,11 +76,14 @@
     }
 </script>
 
-<style scoped>
-.card {
-    text-align: center !important;
+<style scoped>  
+.card-header-title {
+    font-size: 140%;
 }
-.search {
+.search-result {
+    margin: 2%;
+}
+.border {
     margin-top: 3rem;
     background-color: #f1f1f1 !important;
 }
@@ -93,4 +91,9 @@ article {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+.table {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 </style>
