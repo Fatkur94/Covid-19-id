@@ -8,7 +8,7 @@
                         <span class="is-medium tag is-info" v-if="kemarin.jumlahKasusBaruperHari">+{{ kemarin.jumlahKasusBaruperHari }}</span>
                     </div>
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 positif" v-text="pusat.jumlahKasus"></h1>
+                        <h1 class="title is-1 positif" v-text="pusat.jumlahKasus.toLocaleString()"></h1>
                         <p v-if="pusat.jumlahKasus">Positif</p>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                         <span class="is-medium tag is-warning" v-if="kemarin.jumlahKasusDirawatperHari">+{{ kemarin.jumlahKasusDirawatperHari }}</span>
                     </div>
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 rawat" v-text="pusat.perawatan"></h1>
+                        <h1 class="title is-1 rawat" v-text="pusat.perawatan.toLocaleString()"></h1>
                         <p v-if="pusat.perawatan">Karantina</p>
                     </div>
                 </div>
@@ -27,10 +27,10 @@
             <div class="column">
                 <div class="box">
                     <div class="has-text-right">
-                        <span class="is-medium tag is-success" v-if="jumlahKasusSembuhperHari">+{{ kemarin.jumlahKasusSembuhperHari }}</span>
+                        <span class="is-medium tag is-success" v-if="kemarin.jumlahKasusSembuhperHari">+{{ kemarin.jumlahKasusSembuhperHari }}</span>
                     </div>
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 sembuh" v-text="pusat.sembuh"></h1>
+                        <h1 class="title is-1 sembuh" v-text="pusat.sembuh.toLocaleString()"></h1>
                         <p v-if="pusat.sembuh">Sembuh</p>
                     </div>
                 </div>
@@ -38,11 +38,11 @@
             <div class="column">
                 <div class="box">
                     <div class="has-text-right">
-                        <span class="is-medium tag is-danger" v-if="jumlahKasusMeninggalperHari">+{{ kemarin.jumlahKasusMeninggalperHari }}</span>
+                        <span class="is-medium tag is-danger" v-if="kemarin.jumlahKasusMeninggalperHari">+{{ kemarin.jumlahKasusMeninggalperHari }}</span>
                     </div>
                     <div class="content has-text-centered">
-                        <h1 class="title is-1 meninggal" v-text="pusat.meninggal"></h1>
-                        <p v-if="pusat.sembuh">Meninggal</p>
+                        <h1 class="title is-1 meninggal" v-text="pusat.meninggal.toLocaleString()"></h1>
+                        <p v-if="pusat.meninggal">Meninggal</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,12 @@
 
         data() {
             return {
-                pusat: {},
+                pusat: {
+                    jumlahKasus: "".toLocaleString(),
+                    perawatan: "".toLocaleString(),
+                    sembuh: "".toLocaleString(),
+                    meninggal: "".toLocaleString()
+                },
                 kemarin: {
                     jumlahKasusBaruperHari: "",
                     jumlahKasusDirawatperHari: "",

@@ -25,9 +25,9 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="content">
-                                        <p class="subtitle">Positif : <span class="positif">{{prov.kasusPosi}}</span></p>
-                                        <p class="subtitle">Sembuh : <span class="sembuh">{{prov.kasusSemb}}</span></p>
-                                        <p class="subtitle">Meninggal : <span class="meninggal">{{prov.kasusMeni}}</span></p>
+                                        <p class="subtitle">Positif : <span class="positif">{{prov.kasusPosi.toLocaleString()}}</span></p>
+                                        <p class="subtitle">Sembuh : <span class="sembuh">{{prov.kasusSemb.toLocaleString()}}</span></p>
+                                        <p class="subtitle">Meninggal : <span class="meninggal">{{prov.kasusMeni.toLocaleString()}}</span></p>
                                     </div>
                                 </div>
                             </div>

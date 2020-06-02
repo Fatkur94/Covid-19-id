@@ -8,7 +8,7 @@
     </section>
     <div class="has-text-centered">
         <span>
-          <strong>Covid-19</strong> by <a href="">Fatkur Rohman</a>. Source code : 
+          <strong>Pantau COVID-19</strong> by <a href="">Fatkur</a>. Source code : 
           <a href="https://github.com/Fatkur94/Covid-19-id">github</a>. Data source : 
           <a href="https://github.com/mathdroid/indonesia-covid-19-api">mathdroid</a>
         </span>
